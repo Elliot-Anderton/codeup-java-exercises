@@ -2,27 +2,32 @@ import java.util.Scanner;
 
 public class HighLow {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
         int random = getRandom(100, 1);
 
-        int thisGuess;
+        System.out.println(random);
 
-        do {
-            System.out.println("Guess The Number");
-            thisGuess = scan.nextInt();
+        checker(random);
+    }
 
-            if (thisGuess < random) {
-                System.out.println("Higher");
-            } else if (thisGuess > random) {
-                System.out.println("Lower");
-            } else {
-                System.out.println("Good guess");
-            }
-        } while (thisGuess != random);
+    public static void checker(int random) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Guess The Number");
+        int guess = scan.nextInt();
+
+        if (guess < random) {
+            System.out.println("Higher");
+            checker(random);
+        } else if (guess > random) {
+            System.out.println("Lower");
+            checker(random);
+        } else {
+            System.out.println("Good guess");
+        }
     }
 
     public static int getRandom(int max, int min) {
-        return (int)Math.floor(Math.random() * (max - min + 1) + 1);
+        return (int) Math.floor(Math.random() * (max - min + 1) + 1);
     }
 }
