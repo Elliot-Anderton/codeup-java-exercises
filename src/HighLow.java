@@ -11,7 +11,6 @@ public class HighLow {
         do {
             System.out.println("Guess The Number");
             thisGuess = scan.nextInt();
-            System.out.println(random);
 
             if (thisGuess < random) {
                 System.out.println("Higher");
