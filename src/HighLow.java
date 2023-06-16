@@ -5,8 +5,6 @@ public class HighLow {
 
         int random = getRandom(100, 1);
 
-        System.out.println(random);
-
         checker(random);
     }
 
