@@ -44,12 +44,11 @@ public class MethodsExercises {
     }
 
     public static void factorial() {
+        Scanner scan = new Scanner(System.in);
         String cont;
-        do {
-            System.out.println("Enter a number between 1 and 10");
 
-            Scanner scan = new Scanner(System.in);
-            long userInput = scan.nextLong();
+        do {
+            long userInput = getInt(1, 10);
 
             long product = 1;
 
