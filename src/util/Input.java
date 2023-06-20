@@ -12,26 +12,19 @@ public class Input {
     public boolean yesNo() {
         String userResponse = scanner.next();
 
-        boolean isTrue;
-
-        isTrue = userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes");
-
-        return isTrue;
+        return userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes");
     }
 
     public boolean yesNo(String prompt) {
         System.out.println(prompt);
 
         String userResponse = scanner.next();
-        boolean isTrue;
 
-        isTrue = userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes");
-
-        return isTrue;
+        return userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes");
     }
 
     public int getInt(int min, int max) {
-        System.out.printf("Please enter a number between %s and %s %n", min, max);
+        System.out.printf("Please enter an integer between %s and %s %n", min, max);
         int userNum = scanner.nextInt();
 
         if (userNum < min || userNum > max) {
@@ -42,7 +35,11 @@ public class Input {
     }
 
     public int getInt() {
-        System.out.println("Please enter a number");
+        return scanner.nextInt();
+    }
+
+    public int getInt(String prompt) {
+        System.out.println(prompt);
 
         return scanner.nextInt();
     }
@@ -59,8 +56,6 @@ public class Input {
     }
 
     public double getDouble() {
-        System.out.println("Please enter a number");
-
         return scanner.nextDouble();
     }
 
