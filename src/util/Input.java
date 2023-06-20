@@ -9,6 +9,12 @@ public class Input {
         return scanner.nextLine();
     }
 
+    public String getString(String prompt) {
+        System.out.println(prompt);
+
+        return scanner.nextLine();
+    }
+
     public boolean yesNo() {
         String userResponse = scanner.next();
 
