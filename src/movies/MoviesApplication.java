@@ -22,6 +22,9 @@ public class MoviesApplication {
             case 5:
                 filiterMovies("comedy");
                 break;
+            case 6:
+                filiterMovies("animated");
+                break;
             default:
                 filiterMovies();
         }
@@ -51,7 +54,7 @@ public class MoviesApplication {
         Input input = new Input();
 
         boolean cont;
-        int selection = 6;
+        int selection = 7;
 
         do {
 
@@ -66,7 +69,9 @@ public class MoviesApplication {
                         2 for musical
                         3 for scifi
                         4 for horror
-                        5 for comedy""");
+                        5 for comedy
+                        6 for animated
+                        7 for all movies""");
                 selection = input.getInt();
             }
         } while (cont);
