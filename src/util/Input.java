@@ -35,8 +35,10 @@ public class Input {
     }
 
     public int getInt(int min, int max) {
+
         System.out.printf("Please enter an integer between %s and %s %n", min, max);
-        int userNum = scanner.nextInt();
+
+        int userNum = getInt();
 
         if (userNum < min || userNum > max) {
             userNum = getInt(min, max);
@@ -46,18 +48,28 @@ public class Input {
     }
 
     public int getInt() {
-        return scanner.nextInt();
+        int userNum = 0;
+
+        try {
+            userNum = Integer.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Not a valid Integer");
+            userNum = getInt();
+        }
+
+        return userNum;
     }
 
     public int getInt(String prompt) {
         System.out.println(prompt);
 
-        return scanner.nextInt();
+        return getInt();
     }
 
     public double getDouble(double min, double max) {
         System.out.printf("Please enter a number between %s and %s %n", min, max);
-        double userNum = scanner.nextDouble();
+
+        double userNum = getDouble();
 
         if (userNum < min || userNum > max) {
             userNum = getDouble(min, max);
@@ -67,12 +79,21 @@ public class Input {
     }
 
     public double getDouble() {
-        return scanner.nextDouble();
+        double userNum = 0;
+
+        try {
+            userNum = Double.valueOf(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Not a valid Double");
+            userNum = getDouble();
+        }
+
+        return userNum;
     }
 
     public double getDouble(String prompt) {
         System.out.println(prompt);
 
-        return scanner.nextDouble();
+        return getDouble();
     }
 }
